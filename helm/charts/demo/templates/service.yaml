@@ -5,8 +5,4 @@ metadata:
 spec:
   selector:
     app: {{ .Values.app.name }}
-  ports:
-    - protocol: {{ .Values.service.ports.protocol | default "TCP" }}
-      port: {{ .Values.service.ports.port | default 80 }}
-      targetPort: {{ .Values.service.ports.targetPort | default 80 }}
-      name: {{ .Values.service.ports.name | default "http" }}
+  ports: {{- .Values.service.ports | toYaml | nindent 4 }}
