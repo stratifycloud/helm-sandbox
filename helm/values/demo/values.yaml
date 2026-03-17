@@ -1,0 +1,12 @@
+app:
+  name: nginx
+  namespace: demo
+  image:
+    repository: nginx
+    tag: 1.14.2
+service:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
