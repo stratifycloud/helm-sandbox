@@ -7,7 +7,7 @@ spec:
     service:
       name: {{ .Values.app.name }}-service
       port:
-        name: {{ .Values.service.ports.0.name | default "http" }}
+        name: http
   ingressClassName: tailscale
   tls:
     - hosts:
